@@ -25,10 +25,8 @@ resource "aws_autoscaling_group" "anju_ha_asg" {
     id      = aws_launch_template.anju_ha_lt.id
     version = "$Latest"
   }
+  health_check_type         = "ELB"
+  health_check_grace_period = 300
+  target_group_arns         = [aws_lb_target_group.anju_ha_tg.arn]
 
-  tag {
-    key                 = "Name"
-    value               = "anju-ha-instance"
-    propagate_at_launch = true
-  }
 }

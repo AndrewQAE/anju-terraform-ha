@@ -27,3 +27,9 @@ variable "subnet_ids" {
   description = "List of subnet IDs for the Auto Scaling Group"
   default     = ["subnet-05f806379727510a1", "subnet-006f580470672aa42", "subnet-0cad5914a26b35df6"] # Example subnet IDs, replace with your desired subnets
 }
+
+variable "vpc_id" {
+  type        = string
+  description = "The VPC ID for the load balancer"
+  default     = "vpc-0021093bed929b9bd" # Example
+}

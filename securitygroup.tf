@@ -1,7 +1,7 @@
 resource "aws_security_group" "anju_app_ha_sg" {
   name        = "anju-app-ha-sg"
   description = "Security group for Anju app"
-  vpc_id      = "vpc-0021093bed929b9bd"
+  vpc_id      = var.vpc_id
 
 }
 
